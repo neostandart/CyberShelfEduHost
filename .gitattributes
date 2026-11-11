@@ -1,0 +1,4 @@
+# Published build output: store every file byte for byte.
+# Blazor checks SHA-256 hashes (integrity, service-worker-assets.js),
+# so line ending conversion (core.autocrlf) breaks the app.
+* -text

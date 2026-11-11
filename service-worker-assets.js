@@ -430,7 +430,7 @@ self.assetsManifest = {
       "url": "icon-maskable-512.png"
     },
     {
-      "hash": "sha256-lPN10yIIBfBR/IY9Yp/dxT+mHR00ssGkHyBe2LlNVgE=",
+      "hash": "sha256-NyHv0NoMmaQoXfMufCtwv7GKP2dAnAO22hiZpAlmUzE=",
       "url": "index.html"
     },
     {
