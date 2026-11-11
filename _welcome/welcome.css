@@ -29,7 +29,7 @@
     --flash-in-time: 0.86s;
     /* grows, then holds */
     --flash-fade-time: 1.4s;
-    /* fades out; LOGO_HOLD_TIME in welcome.js must cover it */
+    /* fades out; LOGO_HOLD_TIME in welcome.js is matched to it by hand */
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -147,13 +147,14 @@
 /* =========================*/
 /* BGN Welcome Logo (shelf) */
 
-/* The sequence, up to the moment the screen starts to fade (about 5.2 s), with the values below:
+/* The sequence, up to the moment the screen starts to fade (about 5.0 s), with the values below:
    0-2.5 s      the logo arrives from afar, along an arc
-   1.6-2.74 s   the books hop all at once as the shelf lands; the smallest one settles last
+   1.6-2.85 s   the books hop all at once as the shelf lands; the smallest one settles last
                 (--book-size in index.html: the book height, 118 px = 0 to 174 px = 1)
-   2.89-3.19 s  after --logo-key-pause, the space bar is pressed (welcome.js waits for the end of this one)
-   3.04-5.3 s   after --flash-delay, the flash: grows and holds (--flash-in-time), fades (--flash-fade-time);
-                LOGO_HOLD_TIME in welcome.js keeps the logo on screen for it
+   3.0-3.3 s    after --logo-key-pause, the space bar is pressed (welcome.js waits for the end of this one)
+   3.15-5.41 s  after --flash-delay, the flash: grows and holds (--flash-in-time), fades (--flash-fade-time);
+                LOGO_HOLD_TIME in welcome.js keeps the logo on screen for it: the tail of the fade may overlap
+                the start of the screen fade-out (it does by about 0.4 s now)
 
    The earlier entrance, a shelf falling from above: _docs/00-welcome-screen/logo-source/landing-drop.css */
 

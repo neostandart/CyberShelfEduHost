@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "xGsp6C9T",
+  "version": "3WAW7A4B",
   "assets": [
     {
       "hash": "sha256-LqoJxwDd2V6bw6+o36Xty4JMQ5QV2iZoBncqKNqff6o=",
@@ -158,8 +158,8 @@ self.assetsManifest = {
       "url": "_content/Radzen.Blazor/fonts/SourceSans3VF-Upright.ttf.woff2"
     },
     {
-      "hash": "sha256-+D+X8Bl2hAJ/PfQREgUlJ27utqYMf+adlRRdRz/QfmI=",
-      "url": "_framework/CyberShelf-Edu.8s8627xkr3.wasm"
+      "hash": "sha256-9SG1gtVzbmqYyd+fnpmBIarmENvVOZ8bheTgqvfVV7A=",
+      "url": "_framework/CyberShelf-Edu.3aacne7h0x.wasm"
     },
     {
       "hash": "sha256-RfNgCZH1xyQz+oy35Xl153ETtT1W4GRPy8ktO0oUJEw=",
@@ -362,8 +362,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.w3qd1tpl0e.js"
     },
     {
-      "hash": "sha256-SuEP4t0B+l8JbkQjG1ASoic/8+xUgNBJdecXtfBS1C8=",
-      "url": "_framework/dotnet.i6yp0ubqe2.js"
+      "hash": "sha256-GUyXpCbRylFf61u6sBFQ4op6it4iSLvHokRu60gtxME=",
+      "url": "_framework/dotnet.9obg99ovy0.js"
     },
     {
       "hash": "sha256-jZddobLBM2C3lQhYQ61xSQJ/WqD3eQCO3RzoHGaOjx0=",
@@ -382,15 +382,15 @@ self.assetsManifest = {
       "url": "_framework/icudt.oh1zvcfom8.dat"
     },
     {
-      "hash": "sha256-UBiQYwI/93a9ta5pi+EBzhP2FKZWtjtSBcuTxMNPsVU=",
-      "url": "_framework/ru/CyberShelf-Edu.resources.gk5eojtfqg.wasm"
+      "hash": "sha256-/KzAB6pJ2SPRqycOktqLEgGHqBZrahF++6gWutm1A0Q=",
+      "url": "_framework/ru/CyberShelf-Edu.resources.01a16x0mcs.wasm"
     },
     {
-      "hash": "sha256-7/REl1eck7DO4dDH14jlr6p4Zc3+WfqKufmwoKoqvj8=",
+      "hash": "sha256-LoofDNGAanDx8v6NNg0CnoZ+QEksw+p+pkrRsq/V6Ck=",
       "url": "_welcome/welcome.css"
     },
     {
-      "hash": "sha256-O+8B6r6iblHs27YuF5djd+DHN4FR0TYgG+pwDpAn7/E=",
+      "hash": "sha256-b5/32nnqkAd+vqkOQ5DW54j8ziejlz13wbwj+9hWqpE=",
       "url": "_welcome/welcome.js"
     },
     {
@@ -402,7 +402,7 @@ self.assetsManifest = {
       "url": "appsettings.json"
     },
     {
-      "hash": "sha256-DKkiirqju3ehJL/ni7fTn14ryuou1uREO19vWuQYTaQ=",
+      "hash": "sha256-qwXJVtozaRaYYriWRJezcbKmigngBVWGCOaZdoBfkcE=",
       "url": "branding/branding.json"
     },
     {
@@ -430,7 +430,7 @@ self.assetsManifest = {
       "url": "icon-maskable-512.png"
     },
     {
-      "hash": "sha256-KZijm2q/4bIWTRcD6edjKv/1fNdutRB2oX6nxx1hQNU=",
+      "hash": "sha256-lPN10yIIBfBR/IY9Yp/dxT+mHR00ssGkHyBe2LlNVgE=",
       "url": "index.html"
     },
     {

@@ -1,7 +1,7 @@
 class CyberShelfAgent {
   static LOGO_ANIMATION = "kf-key-press"; // the last one of the logo animation
 
-  static LOGO_HOLD_TIME = 1700; // pause after the key has been pressed: the flash plays out in it (--flash-delay + --flash-in-time + --flash-fade-time - 0.3 s of the key press in welcome.css)
+  static LOGO_HOLD_TIME = 1700; // pause after the key has been pressed, for the flash. Upper bound: --flash-delay + --flash-in-time + --flash-fade-time - 0.3 s of the key press in welcome.css (2110 now); less lets the screen start fading while the flash is fading
   static LOGO_GUARD_TIME = 8000; // in case "animationend" never fires; longer than the sequence in welcome.css
   static BRANDING_WAIT_TIME = 800; // a slow network must not leave the screen empty
   static QUICK_HOLD_TIME = 1500; // page reload: logo is shown briefly, no animation
