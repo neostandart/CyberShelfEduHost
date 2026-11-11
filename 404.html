@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberShelf-Edu</title>
+    <base href="/" />
+    <link href="_framework/dotnet.i6yp0ubqe2.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-SuEP4t0B+l8JbkQjG1ASoic/8+xUgNBJdecXtfBS1C8=" />
+    <!---->
+    <link rel="stylesheet" href="css/app.css" />
+    <link
+      rel="stylesheet"
+      href="_content/Radzen.Blazor/css/material-base.css"
+    />
+    <!-- If you add any scoped CSS files, uncomment the following to load them
+    <link href="CyberShelf-Edu.styles.css" rel="stylesheet" /> -->
+    <link href="manifest.webmanifest" rel="manifest" />
+    <meta name="theme-color" content="#4340D2" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.w3qd1tpl0e.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.i6yp0ubqe2.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.b6l13xorvf.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.v06hirbjsv.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/blazor.webassembly.w3qd1tpl0e.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/dotnet.i6yp0ubqe2.js": "sha256-SuEP4t0B+l8JbkQjG1ASoic/8+xUgNBJdecXtfBS1C8=",
+    "./_framework/dotnet.js": "sha256-SuEP4t0B+l8JbkQjG1ASoic/8+xUgNBJdecXtfBS1C8=",
+    "./_framework/dotnet.native.b6l13xorvf.js": "sha256-jZddobLBM2C3lQhYQ61xSQJ/WqD3eQCO3RzoHGaOjx0=",
+    "./_framework/dotnet.native.js": "sha256-jZddobLBM2C3lQhYQ61xSQJ/WqD3eQCO3RzoHGaOjx0=",
+    "./_framework/dotnet.runtime.js": "sha256-QbnqrZGHtGq7wudS17/AYEPpH9JkphrsyVllD6JHmds=",
+    "./_framework/dotnet.runtime.v06hirbjsv.js": "sha256-QbnqrZGHtGq7wudS17/AYEPpH9JkphrsyVllD6JHmds="
+  }
+}</script>
+    <!---->
+    <script src="js/language.js"></script>
+    <script src="js/branding.js"></script>
+    <script src="_welcome/welcome.js"></script>
+
+    <style>
+      /* Blazor Default */
+      .valid.modified:not([type="checkbox"]) {
+        outline: 1px solid #26b050;
+      }
+
+      .invalid {
+        outline: 1px solid red;
+      }
+
+      .validation-message {
+        color: red;
+      }
+
+      #blazor-error-ui {
+        color-scheme: light only;
+        background: lightyellow;
+        bottom: 0;
+        box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        display: none;
+        left: 0;
+        padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+        position: fixed;
+        width: 100%;
+        z-index: 3001;
+      }
+
+      #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+      }
+
+      .blazor-error-boundary {
+        background:
+          url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=)
+            no-repeat 1rem/1.8rem,
+          #b32121;
+        padding: 1rem 1rem 1rem 3.7rem;
+        color: white;
+      }
+
+      .blazor-error-boundary::after {
+        content: "An error has occurred.";
+      }
+
+      code {
+        color: #c02d76;
+      }
+
+      .form-floating > .form-control-plaintext::placeholder,
+      .form-floating > .form-control::placeholder {
+        color: var(--bs-secondary-color);
+        text-align: end;
+      }
+
+      .form-floating > .form-control-plaintext:focus::placeholder,
+      .form-floating > .form-control:focus::placeholder {
+        text-align: start;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="Welcome">
+      <link href="_welcome/welcome.css" rel="stylesheet" />
+      <!---->
+      <div id="Background" aria-hidden="true">
+        <svg viewBox="0 0 380 470">
+          <g transform="rotate(0 190 425)">
+            <rect x="50" y="392" width="280" height="66" rx="14.52" class="p" />
+            <rect
+              x="76"
+              y="407.84"
+              width="254"
+              height="34.32"
+              rx="7.92"
+              class="w"
+            />
+            <rect
+              x="94"
+              y="422.36"
+              width="218"
+              height="5.28"
+              rx="2.64"
+              class="p"
+            />
+          </g>
+          <g transform="rotate(-1.5 202 359)">
+            <rect x="74" y="328" width="256" height="62" rx="13.64" class="d" />
+            <rect
+              x="100"
+              y="342.88"
+              width="230"
+              height="32.24"
+              rx="7.4399999999999995"
+              class="w"
+            />
+            <rect
+              x="118"
+              y="356.52"
+              width="194"
+              height="4.96"
+              rx="2.48"
+              class="d"
+            />
+          </g>
+          <g transform="rotate(1.5 179 297)">
+            <rect x="44" y="266" width="270" height="62" rx="13.64" class="p" />
+            <rect
+              x="70"
+              y="280.88"
+              width="244"
+              height="32.24"
+              rx="7.4399999999999995"
+              class="w"
+            />
+            <rect
+              x="88"
+              y="294.52"
+              width="208"
+              height="4.96"
+              rx="2.48"
+              class="p"
+            />
+          </g>
+          <g transform="rotate(-1 198 234)">
+            <rect x="82" y="204" width="232" height="60" rx="13.2" class="d" />
+            <rect
+              x="108"
+              y="218.4"
+              width="206"
+              height="31.200000000000003"
+              rx="7.199999999999999"
+              class="w"
+            />
+            <rect
+              x="126"
+              y="231.6"
+              width="170"
+              height="4.8"
+              rx="2.4"
+              class="d"
+            />
+          </g>
+          <path
+            class="dd"
+            d="M94 98L190 130L286 98V164C286 202 94 202 94 164Z"
+          />
+          <path
+            class="dd"
+            d="M190 8L366 64L190 120L14 64Z"
+            stroke-linejoin="round"
+            stroke-width="10"
+          />
+          <path
+            d="M60 74C46 92 44 122 44 150"
+            fill="none"
+            class="tassel"
+            stroke-width="7"
+            stroke-linecap="round"
+          />
+          <circle cx="44" cy="156" r="12" class="dd" />
+          <path class="dd" d="M36 166H52L60 232H28Z" />
+        </svg>
+      </div>
+      <!---->
+      <div id="Organization" hidden>
+        <img id="OrganizationLogo" alt="" hidden />
+        <div id="OrganizationTitle"></div>
+      </div>
+      <!---->
+      <div id="Content">
+        <div id="LogoBox" style="position: relative">
+          <div id="Flash"></div>
+          <div id="Logo">
+            <svg viewBox="36 62 440 408" role="img" aria-label="CyberShelf-Edu">
+              <g class="book" style="--book: 0; --book-size: 0.61">
+                <rect x="86" y="92" width="62" height="152" rx="7" class="p" />
+                <rect x="98" y="112" width="38" height="10" rx="3" class="w" />
+                <rect x="98" y="130" width="38" height="10" rx="3" class="w" />
+              </g>
+              <g class="book" style="--book: 1; --book-size: 0.04">
+                <rect
+                  x="156"
+                  y="124"
+                  width="46"
+                  height="120"
+                  rx="7"
+                  class="d"
+                />
+                <rect x="167" y="206" width="24" height="8" rx="3" class="w" />
+              </g>
+              <g class="book" style="--book: 2; --book-size: 1">
+                <rect x="210" y="70" width="72" height="174" rx="7" class="p" />
+                <rect x="224" y="96" width="44" height="44" rx="5" class="w" />
+                <rect x="224" y="206" width="44" height="8" rx="3" class="w" />
+              </g>
+              <g transform="rotate(-14 318 244)">
+                <g class="book" style="--book: 3; --book-size: 0.54">
+                  <rect
+                    x="318"
+                    y="96"
+                    width="50"
+                    height="148"
+                    rx="7"
+                    class="d"
+                  />
+                  <rect
+                    x="330"
+                    y="118"
+                    width="26"
+                    height="8"
+                    rx="3"
+                    class="w"
+                  />
+                </g>
+              </g>
+              <g class="book" style="--book: 4; --book-size: 0">
+                <rect
+                  x="374"
+                  y="126"
+                  width="44"
+                  height="118"
+                  rx="7"
+                  class="p"
+                />
+                <rect x="385" y="146" width="22" height="8" rx="3" class="w" />
+              </g>
+              <g class="shelf">
+                <rect
+                  x="44"
+                  y="244"
+                  width="424"
+                  height="22"
+                  rx="11"
+                  class="p"
+                />
+                <rect x="82" y="262" width="20" height="36" rx="6" class="p" />
+                <rect x="410" y="262" width="20" height="36" rx="6" class="p" />
+              </g>
+              <path
+                class="cord"
+                d="M300 266C300 322 212 296 212 354"
+                fill="none"
+                stroke-width="12"
+                stroke-linecap="round"
+              />
+              <g class="keyboard">
+                <path
+                  class="p"
+                  d="M122 350H390a10 10 0 0 1 8.4 4.6L456 446a10 10 0 0 1-8.4 15.4H64.4a10 10 0 0 1-8.4-15.4L113.6 354.6A10 10 0 0 1 122 350z"
+                />
+                <polygon
+                  points="126.9,362.3 152.4,362.3 145.0,383.8 117.6,383.8"
+                  class="w"
+                />
+                <polygon
+                  points="156.0,362.3 181.5,362.3 176.1,383.8 148.8,383.8"
+                  class="w"
+                />
+                <polygon
+                  points="185.1,362.3 210.6,362.3 207.3,383.8 180.0,383.8"
+                  class="w"
+                />
+                <polygon
+                  points="214.1,362.3 239.7,362.3 238.5,383.8 211.1,383.8"
+                  class="w"
+                />
+                <polygon
+                  points="243.2,362.3 268.8,362.3 269.7,383.8 242.3,383.8"
+                  class="w"
+                />
+                <polygon
+                  points="272.3,362.3 297.9,362.3 300.9,383.8 273.5,383.8"
+                  class="w"
+                />
+                <polygon
+                  points="301.4,362.3 326.9,362.3 332.0,383.8 304.7,383.8"
+                  class="w"
+                />
+                <polygon
+                  points="330.5,362.3 356.0,362.3 363.2,383.8 335.9,383.8"
+                  class="w"
+                />
+                <polygon
+                  points="359.6,362.3 385.1,362.3 394.4,383.8 367.0,383.8"
+                  class="w"
+                />
+                <polygon
+                  points="112.4,395.9 140.8,395.9 133.4,417.4 103.2,417.4"
+                  class="w"
+                />
+                <polygon
+                  points="144.8,395.9 173.1,395.9 167.8,417.4 137.6,417.4"
+                  class="w"
+                />
+                <polygon
+                  points="177.1,395.9 205.5,395.9 202.2,417.4 172.0,417.4"
+                  class="w"
+                />
+                <polygon
+                  points="209.5,395.9 237.8,395.9 236.7,417.4 206.5,417.4"
+                  class="w"
+                />
+                <polygon
+                  points="241.8,395.9 270.2,395.9 271.1,417.4 240.9,417.4"
+                  class="w"
+                />
+                <polygon
+                  points="274.2,395.9 302.5,395.9 305.5,417.4 275.3,417.4"
+                  class="w"
+                />
+                <polygon
+                  points="306.5,395.9 334.9,395.9 340.0,417.4 309.8,417.4"
+                  class="w"
+                />
+                <polygon
+                  points="338.9,395.9 367.2,395.9 374.4,417.4 344.2,417.4"
+                  class="w"
+                />
+                <polygon
+                  points="371.2,395.9 399.6,395.9 408.8,417.4 378.6,417.4"
+                  class="w"
+                />
+                <polygon
+                  points="98.0,429.5 147.6,429.5 141.2,451.0 88.7,451.0"
+                  class="w"
+                />
+                <polygon
+                  points="152.9,429.5 359.1,429.5 365.1,451.0 146.9,451.0"
+                  class="w space"
+                />
+                <polygon
+                  points="364.4,429.5 414.0,429.5 423.3,451.0 370.8,451.0"
+                  class="w"
+                />
+              </g>
+            </svg>
+          </div>
+          <div id="Spinner" aria-hidden="true">
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
+          </div>
+        </div>
+
+        <div
+          id="ProgressText"
+          role="status"
+          aria-label="Loading"
+          data-i18n-label="Loading"
+        ></div>
+      </div>
+      <!---->
+      <div id="AppVersion"></div>
+    </div>
+
+    <div id="Application"></div>
+
+    <div id="blazor-error-ui">
+      <span data-i18n="UnhandledError">An unhandled error has occurred.</span>
+      <a href="." class="reload" data-i18n="Reload">Reload</a>
+      <span class="dismiss">🗙</span>
+    </div>
+
+    <!-- Framework (Blazor.start() is called from _welcome/welcome.js) -->
+    <script
+      src="_framework/blazor.webassembly.w3qd1tpl0e.js"
+      autostart="false"
+    ></script>
+    <script>
+      navigator.serviceWorker.register("service-worker.js", {
+        updateViaCache: "none",
+      });
+    </script>
+
+    <!-- Radzen Components -->
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.min.js"></script>
+  </body>
+</html>

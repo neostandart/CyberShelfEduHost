@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybershelf Welcome</title>
+    <!--  -->
+    <link href="./_content/Radzen.Blazor/css/material.css" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #MainFrame {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 3s;
+            /* *** */
+            width: 100%;
+            height: 100%;
+            margin: -5% 0 0 0;
+            padding: 1rem;
+        }
+
+        #MainFrame.visible {
+            opacity: 1;
+        }
+
+
+        #Header {
+            font-style: italic;
+            margin-bottom: 3rem;
+            color: var(--rz-primary);
+            letter-spacing: 4px;
+        }
+
+        #RunBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #SonarWrapper {
+            position: relative;
+            width: auto;
+            height: auto;
+        }
+
+        #RunBtn {
+            padding: 2rem;
+            border-radius: 50%;
+        }
+
+        #RunBtn:active {
+            transform: scale(0.95);
+        }
+
+        #SonarWave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #54C585;
+            opacity: 0;
+            z-index: -1;
+            pointer-events: none;
+            animation: kf-sonar-wave 2s linear infinite;
+        }
+
+        @keyframes kf-sonar-wave {
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        #Pointer {
+            opacity: 0;
+            transition: opacity 1s 3s;
+            color: orange;
+            animation: kf-pointer 1s linear infinite alternate;
+        }
+
+        #Pointer.visible {
+            opacity: 1;
+        }
+
+        @keyframes kf-pointer {
+            from {
+                transform: translateY(30px);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        #Pointer {
+            color: orange;
+        }
+
+        /* *** */
+
+        #ShestovWidget #LinkImage:active {
+            transform: scale(0.9);
+        }
+    </style>
+
+</head>
+
+<body class="rz-text-body1">
+
+    <main id="MainFrame">
+        <h1 id="Header">Киберполка</h1>
+
+        <article id="RunBox">
+            <div id="SonarWrapper">
+
+                <div id="ShestovWidget">
+                    <a id="Link" href="https://uppercode.ru/CyberShelfHost?distor=0a29281f-d321-4198-90ab-6e54b990c411">
+                        <img id="LinkImage" src="./__ext-res/distor-shestov-banner.png">
+                    </a>
+                </div>
+
+                <div id="SonarWave"></div>
+            </div>
+            <h5 style="margin: 0.75rem auto 0 auto; text-align: center;color:var(--rz-primary);">Нажмите, чтобы запустить приложение в режиме
+                онлайн</h5>
+
+            <svg id="Pointer" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16" fill="currentColor"
+                width="80" height="80">
+                <path
+                    d="M 7.9998708,0.99957995 A 0.5,0.5 0 0 1 8.4665618,1.320606 l 4.9999522,13.000159 a 0.5,0.5 0 0 1 -0.653367,0.643467 l -4.8132762,-1.926866 -4.81469,1.926866 A 0.5,0.5 0 0 1 2.5332288,14.320765 L 7.5331808,1.320606 a 0.5,0.5 0 0 1 0.465983,-0.320319 z" />
+            </svg>
+
+        </article>
+    </main>
+
+    <!--  -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (ev) => {
+            document.getElementById("MainFrame").classList.add("visible");
+            document.getElementById("Pointer").classList.add("visible");
+        });
+
+        function onRunBtnClick() {
+            console.log("onRunBtnClick");
+            let hteSonarWave = document.getElementById("SonarWave");
+            if (hteSonarWave) {
+                hteSonarWave.remove();
+            }
+        }
+    </script>
+</body>
+
+</html>

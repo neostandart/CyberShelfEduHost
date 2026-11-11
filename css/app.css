@@ -1,0 +1,320 @@
+
+/* ==============================================================
+    Initial initialization 
+   ============================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+:root {
+    font-family: var(--rz-text-font-family);
+    color: var(--rz-text-color);
+    font-size: var(--rz-body-font-size);
+    line-height: var(--rz-body-line-height);
+    background-color: var(--rz-body-background-color);
+    /* *** */
+    font-size: var(--rz-root-font-size);
+    /* *** */
+    --ui-z-cover: 7;
+    --ui-z-info: 6;
+    --ui-z-busy: 5;
+    --ui-z-navbar: 4;
+    --ui-z-book-ctr: 3;
+    --ui-z-book-view: 2;
+    --ui-z-elevated: 1;
+    /* *** */
+    --ui-icon-tn: 12px;
+    --ui-icon-sm: 18px;
+    --ui-icon-md: 24px;
+    --ui-icon-lg: 36px;
+    --ui-icon-hg: 48px;
+    --ui-icon-gn: 64px;
+    /* *** */
+    --ui-image-tn: 80px;
+    --ui-image-sm: 96px;
+    --ui-image-md: 128px;
+    --ui-image-lg: 160px;
+    --ui-image-hg: 224px;
+    --ui-image-gn: 256px;
+    /* *** */
+    --ui-btn-tn: 18px;
+    --ui-btn-sm: 26px;
+    --ui-btn-md: 34px;
+    --ui-btn-md-r: 42px;
+    --ui-btn-lg: 52px;
+    --ui-btn-hg: 70px;
+    --ui-btn-gn: 92px;
+    /* *** */
+    --ui-info-bg: #e4edfe;
+    /* *** */
+    --ui-packctr-width-xs: 340px;
+    --ui-packctr-width: 380px;
+    --ui-packctr-width-lg: 440px;
+    --ui-packctr-list-max-height: 500px;
+    /* *** */
+    --folder-color: goldenrod;
+    --folder-color-dark: #B8860B;
+    --suite-color: #b8860b;
+    --book-color: #5C2D91;
+    --book-color-lighter: #AA92C4;
+    --book-bg: #f5f1f8;
+    --book-bg-darker: #e9e0f0;
+    --package-color: #2475BE;
+    --selitem-bg: #DFDFF1;
+    --selitem-color-br: var(--rz-primary);
+    --item-focus-color: orange;
+    --item-focus-bg: white;
+    /* *** */
+    --diode-active-color: #00ff00;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#Application {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+body {
+    font-family: var(--rz-text-font-family);
+    color: var(--rz-text-color);
+    font-size: var(--rz-body-font-size);
+    line-height: var(--rz-body-line-height);
+    background-color: var(--rz-body-background-color);
+}
+
+#Application {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#Application.running {
+    opacity: 1;
+}
+
+/* ==============================================
+    User interface
+   ============================================== */
+
+.ui-size-inherit {
+    width: inherit;
+    height: inherit;
+}
+
+/* icon font size */
+
+.ui-icon-tn {
+    font-size: var(--ui-icon-tn);
+}
+
+.ui-icon-sm {
+    font-size: var(--ui-icon-sm);
+}
+
+.ui-icon-md {
+    font-size: var(--ui-icon-md);
+}
+
+.ui-icon-lg {
+    font-size: var(--ui-icon-lg);
+}
+
+.ui-icon-hg {
+    font-size: var(--ui-icon-hg);
+}
+
+.ui-icon-gn {
+    font-size: var(--ui-icon-gn);
+}
+
+/* icon box size */
+
+.ui-icon-box-tn {
+    width: var(--ui-icon-tn);
+    min-width: var(--ui-icon-tn);
+    height: var(--ui-icon-tn);
+    min-height: var(--ui-icon-tn);
+}
+
+.ui-icon-box-sm {
+    width: var(--ui-icon-sm);
+    min-width: var(--ui-icon-sm);
+    height: var(--ui-icon-sm);
+    min-height: var(--ui-icon-sm);
+}
+
+.ui-icon-box-md {
+    width: var(--ui-icon-md);
+    min-width: var(--ui-icon-md);
+    height: var(--ui-icon-md);
+    min-height: var(--ui-icon-md);
+}
+
+.ui-icon-box-lg {
+    width: var(--ui-icon-lg);
+    min-width: var(--ui-icon-lg);
+    height: var(--ui-icon-lg);
+    min-height: var(--ui-icon-lg);
+}
+
+.ui-icon-box-hg {
+    width: var(--ui-icon-hg);
+    min-width: var(--ui-icon-hg);
+    height: var(--ui-icon-hg);
+    min-height: var(--ui-icon-hg);
+}
+
+.ui-icon-box-gn {
+    width: var(--ui-icon-gn);
+    min-width: var(--ui-icon-gn);
+    height: var(--ui-icon-gn);
+    min-height: var(--ui-icon-gn);
+}
+
+/* Image sizes */
+
+.ui-image-box-tn {
+    width: var(--ui-image-tn);
+    min-width: var(--ui-image-tn);
+    height: var(--ui-image-tn);
+    min-height: var(--ui-image-tn);
+}
+
+.ui-image-box-sm {
+    width: var(--ui-image-sm);
+    min-width: var(--ui-image-sm);
+    height: var(--ui-image-sm);
+    min-height: var(--ui-image-sm);
+}
+
+.ui-image-box-md {
+    width: var(--ui-image-md);
+    min-width: var(--ui-image-md);
+    height: var(--ui-image-md);
+    min-height: var(--ui-image-md);
+}
+
+.ui-image-box-lg {
+    width: var(--ui-image-lg);
+    min-width: var(--ui-image-lg);
+    height: var(--ui-image-lg);
+    min-height: var(--ui-image-lg);
+}
+
+.ui-image-box-hg {
+    width: var(--ui-image-hg);
+    min-width: var(--ui-image-hg);
+    height: var(--ui-image-hg);
+    min-height: var(--ui-image-hg);
+}
+
+.ui-image-box-gn {
+    width: var(--ui-image-gn);
+    min-width: var(--ui-image-gn);
+    height: var(--ui-image-gn);
+    min-height: var(--ui-image-gn);
+}
+
+/* Toolbar & tool buttons */
+
+.ui-toolbar {
+    position: relative;
+    background-color: var(--rz-base-300);
+}
+
+.ui-btn-tn {
+    width: var(--ui-btn-tn);
+    height: var(--ui-btn-tn);
+}
+
+.ui-btn-sm {
+    width: var(--ui-btn-sm);
+    height: var(--ui-btn-sm);
+}
+
+.ui-btn-md {
+    width: var(--ui-btn-md);
+    height: var(--ui-btn-md);
+}
+
+.ui-btn-lg {
+    width: var(--ui-btn-lg);
+    height: var(--ui-btn-lg);
+}
+
+.ui-btn-hg {
+    width: var(--ui-btn-hg);
+    height: var(--ui-btn-hg);
+}
+
+.ui-btn-gn {
+    width: var(--ui-btn-gn);
+    height: var(--ui-btn-gn);
+}
+
+/* Border */
+
+.ui-border-round {
+    border-radius: 50% !important;
+}
+
+/* Tool button (ToolButton.razor) */
+
+.ui-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.ui-btn-wide-1 {
+    min-width: 5em;
+}
+
+.ui-btn-wide-2 {
+    min-width: 8em;
+}
+
+/* Tool Divider (ToolDivider.razor) */
+
+.ui-tool-divider {
+    background-color: var(--rz-base-500);
+    border: none;
+}
+
+/* Dialog Support */
+
+.ui-dlg-button {
+    border-radius: var(--rz-border-radius-8);
+    min-width: 8em;
+}
+
+/* ------------------------------ */
+/* Utilities                      */
+
+.ui-w-fit {
+    width: fit-content !important;
+    max-width: 100%;
+}
+
+.ui-max-fill {
+    width: 100%;
+    height: 100%;
+}
+
+.ui-winbtn {
+    width: 40px;
+}
